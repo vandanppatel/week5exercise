@@ -24,17 +24,77 @@ library(dplyr)
 ```
 ---
 
-# Instructions on How to Obtain the Data
 
-The following is the instructions on how to obtain the data,
+date-format: long
 
-1.  Go to IPUMS https://usa.ipums.org/usa/
-2.  Then click “get data”
-3.  Click select samples
-4.  Unselect Default samples from each year and select ACS 2022. Then click samle selctions
-5.  Then select vaiable by using the search function under harmonized variables to search for STATEICP and EDUC
-6.  Once both are added go to cart
-7.  Click create data extract. Change the data format to csv. Submit extract.
-8.  Download the csv.
 
-#  {#sec-data}
+Instructions on How to Obtain the Data
+The following is the instructions on how to obtain the data, 
+
+Go to IPUMS https://usa.ipums.org/usa/
+
+Then click “get data” 
+
+Click select samples
+
+Unselect Default samples from each year and select ACS 2022. Then click samle selctions
+
+Then select vaiable by using the search function under harmonized variables to search for STATEICP and EDUC 
+
+Once both are added go to cart
+
+Click create data extract. Change the data format to csv. Submit extract. (You may at this point have to log in to your account or create a new account)
+
+Download the csv.
+
+An Overview of The Ratio Estimator
+A ratio estimator is a statistical technique used in survey sampling to estimate a population parameter (such as the total or mean) by leveraging auxiliary information that is correlated with the variable of interest. This method improves the precision of the estimate by using the known total of an auxiliary variable that is easier to measure or has a known population total.
+
+Key Elements
+Study Variable (Y): The variable of interest for which you want to estimate the total or mean (e.g., crop yield).
+
+Auxiliary Variable (X): A related variable that is easier to measure or has a known total (e.g., area of land).
+
+
+The ratio estimator is most effective when there is a strong linear relationship between the auxiliary variable X and the study variable Y, and the relationship approximately passes through the origin.
+
+Formula for the Ratio Estimator
+Let:
+
+\(y_i\) = value of the study variable for the \(i\)-th sample unit,
+
+\(x_i\) = value of the auxiliary variable for the \(i\)-th sample unit,
+
+\(\bar{y}\) and \(\bar{x}\) = sample means of the study and auxiliary variables,
+
+\(X\) = total of the auxiliary variable in the population.
+
+The ratio estimator of the population total \(T_Y\) for the study variable is given by:
+
+$$
+
+\hat{T}_Y = \left( \frac{\bar{y}}{\bar{x}} \right) X
+
+$$
+
+Alternatively, the ratio estimator of the population mean \(\mu_Y\) can be written as:
+
+$$
+
+\hat{\mu}_Y = \left( \frac{\bar{y}}{\bar{x}} \right) \mu_X
+
+$$
+
+Where \(\mu_X\) is the population mean of the auxiliary variable \(X\).
+
+Advantages
+The ratio estimator provides more precise estimates when there is a strong positive correlation between \(Y\) and \(X\).
+
+It uses additional known information, leading to smaller variances compared to simple estimators.
+
+Disadvantages
+It performs poorly if the relationship between \(Y\) and \(X\) is weak or non-linear.
+
+It assumes the relationship between \(Y\) and \(X\) passes through the origin, which may not always hold.
+
+The ratio estimator is especially useful in surveys and fields such as economics, agriculture, and environmental studies, where auxiliary data are often available.
