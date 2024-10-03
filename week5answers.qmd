@@ -1,0 +1,40 @@
+---
+title: "Community Survey 2022 Ratio Estimator Analysis"
+subtitle: "Community-based paramedic service strategies that focus on medical emergencies, emergency transfers, and vehicle accidents may help to effectively manage EMS demand"
+author: 
+  - Group 35
+thanks: "Code and data are available at: https://github.com/vandanppatel/week5exercise"
+date: today
+date-format: long
+format: pdf
+number-sections: true
+bibliography: references.bib
+---
+
+```{r}
+#| include: false
+#| warning: false
+#| message: false
+
+library(tidyverse)
+library(tinytex)
+library(knitr)
+library(ggplot2)
+library(dplyr)
+```
+---
+
+# Instructions on How to Obtain the Data
+
+The following is the instructions on how to obtain the data,
+
+1.  Go to IPUMS https://usa.ipums.org/usa/
+2.  Then click “get data”
+3.  Click select samples
+4.  Unselect Default samples from each year and select ACS 2022. Then click samle selctions
+5.  Then select vaiable by using the search function under harmonized variables to search for STATEICP and EDUC
+6.  Once both are added go to cart
+7.  Click create data extract. Change the data format to csv. Submit extract.
+8.  Download the csv.
+
+#  {#sec-data}
